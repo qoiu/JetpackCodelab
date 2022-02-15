@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -90,11 +91,11 @@ fun Greeting(name: String) {
     val expanded = rememberSaveable { mutableStateOf(false) }
 
     val extraPadding by animateDpAsState( if (expanded.value) 48.dp else 0.dp,
-    animationSpec = spring(
-        dampingRatio = Spring.DampingRatioMediumBouncy,
-        stiffness = Spring.StiffnessLow,
-
-    ))
+    animationSpec = tween(
+        delayMillis = 0,
+        durationMillis = 100
+    )
+    )
 
     Surface(color = MaterialTheme.colors.primary, modifier = Modifier.padding(8.dp, 4.dp)) {
         Row(modifier = Modifier.padding(24.dp)) {
