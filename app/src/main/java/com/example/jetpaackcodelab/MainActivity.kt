@@ -1,5 +1,7 @@
 package com.example.jetpaackcodelab
 
+import android.content.res.Configuration.UI_MODE_NIGHT_NO
+import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -51,7 +53,8 @@ private fun Greetings(names: List<String> = List(1000) { "$it" }) {
     }
 }
 
-@Preview(showBackground = true, name = "Text preview", widthDp = 320)
+@Preview(showBackground = true, name = "Text preview night", widthDp = 320, heightDp = 320, uiMode = UI_MODE_NIGHT_YES)
+@Preview(showBackground = true, name = "Text preview", widthDp = 320, heightDp = 320, uiMode = UI_MODE_NIGHT_NO)
 @Composable
 fun TextPreview() {
     JetpackCodelabTheme {
@@ -105,7 +108,8 @@ fun Greeting(name: String) {
                     .padding(bottom = extraPadding.coerceAtLeast(0.dp))
             ) {
                 Text(text = "Hello,")
-                Text(text = "$name!")
+                Text(text = "$name!",
+                style = MaterialTheme.typography.h4)
             }
             OutlinedButton(onClick = { expanded.value = !expanded.value }) {
                 Text(if (expanded.value) "Show less" else "Show more")
