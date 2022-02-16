@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">JetpaackCodelab</string>
+    <string name="app_name">JetpackCodelab</string>
+    <string name="hello">Hello,</string>
+    <string name="show_less">Show less</string>
+    <string name="show_more">Show more</string>
+    <string name="some_text">Composem ipsum color sit lazy,/npadding theme elit, sed do bouncy.</string>
 </resources>
